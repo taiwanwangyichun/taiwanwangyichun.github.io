@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            padding:20px;
+            border: 5px solid;
+
+            transition: 0.3s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="boxA" class="box"></div>
+
+
+
+    <script>
+        var boxA = document.querySelector('#boxA');
+
+        boxA.onclick = function () {
+            // boxA.style.width = '200px';
+            // var box_width = boxA.clientWidth;
+            var box_width = boxA.offsetWidth;
+
+            if(box_width == 100){
+                boxA.style.width = '200px';
+            }else{
+                boxA.style.width = '100px';
+            }
+        }
+    </script>
+</body>
+
+</html>

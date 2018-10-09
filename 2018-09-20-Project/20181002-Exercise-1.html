@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>20181002-Exercise-1</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <style>
+        * {
+            box-sizing: border-box;
+            /*計算寬度時，包含padding*/
+        }
+
+        body {
+            margin: 0;
+            height: 2000px;
+        }
+        
+        .bg-img {
+            width: 100%;
+            height: calc(100vh - 113.5px);
+            background-image: url("/imgs/01.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        #main.fixed {
+            padding-top: 113.5px;
+        }
+        .container_flex {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .navbar {
+            background-color: cornsilk;
+            /*把nav高度撐高*/
+            padding: 15px 0;
+            top: 0;
+            width: 100%;
+        }
+        .navbar.fixed {
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+        nav.navbar .logo {
+            height: 80px;
+            transition: 0.5s;
+        }
+
+        nav.navbar .logo_small {
+            height: 50px;
+        }
+        .container {
+            max-width: 1200px;
+            /*最大寬度限定*/
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        nav .nav-items {
+            align-self: center;
+            color: white;
+        }
+
+        nav .nav-items a {
+            color: blue;
+            text-decoration: none;
+            padding: 0 10px;
+            border-left: 1px solid blue;
+        }
+        nav .nav-items a:first-child {
+            border-left: none;
+        }
+
+        .mobile-nav-toggle {
+            display: none;
+            margin-top: 10px;
+            float: right;
+            border: 1px solid black;
+            padding: 4px 10px;
+            border-radius: 5px;
+        }
+
+        .mobile-nav-toggle i {
+            color: black;
+            font-size: 25px;
+        }
+
+        .mobile-navbar {
+            display: none;
+            border-top: 1px solid white;
+            background-color: #333;
+            padding: 15px 0;
+        }
+        /*同時有這兩個class的時候*/
+        .mobile-navbar.active {
+            display: none;
+        }
+
+        .mobile-navbar ul {
+            list-style-type: none;
+            padding: 0 40px;
+        }
+
+        .mobile-navbar ul li a {
+            display: block;
+            border-bottom: 1px solid white;
+            padding: 10px 0;
+        }
+
+        .mobile-navbar a {
+            color: white;
+        }
+        .box {
+            width: 33.33%;
+            float: left;
+            padding: 20px;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+        @media screen and (max-width:1200px) {
+
+            /*螢幕尺寸小於1200px時，套用以下css*/
+            .box {
+                width: 100%;
+            }
+
+        }
+
+        @media screen and (max-width:585px) {
+
+            /*螢幕尺寸小於585px時，套用以下css*/
+            nav .nav-items {
+                display: none;
+            }
+
+            .mobile-nav-toggle {
+                display: block;
+                height: fit-content;
+            }
+
+            /*同時有這兩個class的時候*/
+            .mobile-navbar.active {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-img"></div>
+    <nav class="navbar">
+        <div class="container">
+            <div class="container_flex">
+                <div class="nav-logo">
+                    <a href="/">
+                        <img class="logo" src="https://staticaltmetric.s3.amazonaws.com/uploads/2015/10/dark-logo-for-site.png"
+                            alt="">
+                    </a>
+                </div>
+
+                <div class="nav-items">
+                    <a class="link" href="#1">Link1</a>
+                    <a class="link" href="#2">Link2</a>
+                    <a class="link" href="#3">Link3</a>
+                    <a class="link" href="#4">Link4</a>
+                    <a class="link" href="#5">Link5</a>
+                </div>
+                <div id="mobile-nav-toggle" class="mobile-nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    <div class="mobile-navbar">
+        <ul>
+            <li><a class="link" href="#1">Link1</a></li>
+            <li><a class="link" href="#2">Link2</a></li>
+            <li><a class="link" href="#3">Link3</a></li>
+            <li><a class="link" href="#4">Link4</a></li>
+            <li><a class="link" href="#5">Link5</a></li>
+        </ul>
+    </div>
+
+    <div id="main" class="container">
+        <div class="box">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi quos sapiente vel necessitatibus error
+            dolores explicabo dignissimos qui, voluptas temporibus iure saepe corrupti porro pariatur? Blanditiis
+            doloremque eos soluta nam?
+        </div>
+        <div class="box">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione dolore a vel atque quasi id odit
+            assumenda. Totam, sint similique accusamus quae ipsa dolor dolorem laboriosam architecto soluta eveniet
+            tenetur.
+        </div>
+        <div class="box">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil suscipit optio debitis sunt nesciunt amet
+            repellat dicta necessitatibus saepe labore ab aspernatur numquam iusto quis, dolorum illo laboriosam earum
+            quaerat!
+        </div>
+
+        <div class="clearfix"></div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        var mobileNavToggle = document.querySelector("#mobile-nav-toggle");
+        mobileNavToggle.onclick = function () {
+            // 當按鈕按下去時,將選單切換(toggle) Class 'active'
+            document.querySelector(".mobile-navbar").classList.toggle('active');
+        }
+        // window.onscroll = function () { myFunction() };
+
+        // function myFunction() {
+        //     if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        //         document.querySelector(".logo").classList.add("logo_small");
+
+        //     } else {
+        //         document.querySelector(".logo").classList.remove("logo_small");
+        //     }
+        // }
+
+
+        //Jquery版本
+        var window_height = $(window).height();   // returns width of browser viewport
+        var navFixHeight = window_height - 113.5;
+
+        window.onscroll = function () { myFunction() };
+
+        function myFunction() {
+            if (document.body.scrollTop > navFixHeight || document.documentElement.scrollTop > navFixHeight) {
+                /*當卷軸滾動超過定點時，執行以下程式*/
+                document.querySelector('.navbar').classList.add('fixed');
+                document.querySelector('#main').classList.add('fixed');
+            } else {
+                document.querySelector('.navbar').classList.remove('fixed');
+                document.querySelector('#main').classList.remove('fixed');
+            }
+        }
+    </script>
+</body>
+
+</html>

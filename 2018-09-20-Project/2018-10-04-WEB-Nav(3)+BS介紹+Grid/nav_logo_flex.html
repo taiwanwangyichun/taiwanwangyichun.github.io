@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            /*計算寬度時，包含padding*/
+        }
+
+        body {
+            margin: 0;
+            height: 2000px;
+            padding-top: 134px;
+        }
+
+        .d-flex {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .navbar {
+            background-color: #333;
+            /*把nav高度撐高*/
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        nav.navbar .logo {
+            height: 75px;
+            transition: 0.5s;
+        }
+
+        nav.navbar .logo.small-logo {
+            height: 50px;
+        }
+
+        nav .nav-items {
+            align-self: center;
+            color: white;
+        }
+
+        nav .nav-items a {
+            text-decoration: none;
+            padding: 0 10px;
+            color: white;
+            border-left: 1px solid #fff;
+        }
+
+        nav .nav-items a:first-child {
+            border-left: none;
+        }
+
+
+        .container {
+            max-width: 1200px;
+            /*最大寬度限定*/
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .mobile-nav-toggle {
+            display: none;
+            margin-top: 10px;
+            float: right;
+            border: 1px solid white;
+            padding: 4px 10px;
+            border-radius: 5px;
+
+        }
+
+        .mobile-nav-toggle i {
+            color: white;
+            font-size: 24px;
+        }
+
+        .mobile-navbar {
+            display: none;
+            border-top: 1px solid white;
+            background-color: #333;
+            padding: 15px 0;
+        }
+
+        /*同時有這兩個class的時候*/
+        .mobile-navbar.active {
+            display: none;
+        }
+
+        .mobile-navbar ul {
+            list-style-type: none;
+            padding: 0 40px;
+        }
+
+        .mobile-navbar ul li a {
+            display: block;
+            border-bottom: 1px solid white;
+            padding: 10px 0;
+        }
+
+
+
+        .mobile-navbar a {
+            color: white;
+        }
+
+        .box {
+            width: 33.33%;
+            float: left;
+            padding: 20px;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+        @media screen and (max-width:1200px) {
+
+            /*螢幕尺寸小於1200px時，套用以下css*/
+            .box {
+                width: 100%;
+            }
+        }
+
+        /*手機板的css*/
+        @media screen and (max-width:500px) {
+
+            /*螢幕尺寸小於500px時，套用以下css*/
+            nav .nav-items {
+                display: none;
+            }
+
+            .mobile-nav-toggle {
+                display: block;
+            }
+
+            /*同時有這兩個class的時候*/
+            .mobile-navbar.active {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="d-flex">
+                <div class="nav-logo">
+                    <a href="/">
+                        <img class="logo" src="https://staticaltmetric.s3.amazonaws.com/uploads/2015/10/dark-logo-for-site.png"
+                            alt="">
+                    </a>
+                </div>
+                <div class="nav-items">
+                    <a class="link" href="#">Link1</a>
+                    <a class="link" href="#">Link2</a>
+                    <a class="link" href="#">Link3</a>
+                    <a class="link" href="#">Link4</a>
+                    <a class="link" href="#">Link5</a>
+                </div>
+                <!-- 只會在手機板出現 -->
+                <div id="mobile-nav-toggle" class="mobile-nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="mobile-navbar">
+        <ul>
+            <li><a class="link" href="#1">Link1</a></li>
+            <li><a class="link" href="#2">Link1</a></li>
+            <li><a class="link" href="#3">Link1</a></li>
+            <li><a class="link" href="#4">Link1</a></li>
+            <li><a class="link" href="#5">Link1</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="box">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi quos sapiente vel necessitatibus error
+            dolores explicabo dignissimos qui, voluptas temporibus iure saepe corrupti porro pariatur? Blanditiis
+            doloremque eos soluta nam?
+        </div>
+        <div class="box">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione dolore a vel atque quasi id odit
+            assumenda. Totam, sint similique accusamus quae ipsa dolor dolorem laboriosam architecto soluta eveniet
+            tenetur.
+        </div>
+        <div class="box">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil suscipit optio debitis sunt nesciunt amet
+            repellat dicta necessitatibus saepe labore ab aspernatur numquam iusto quis, dolorum illo laboriosam earum
+            quaerat!
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+
+    <script>
+        var mobileNavToggle = document.querySelector("#mobile-nav-toggle");
+        mobileNavToggle.onclick = function () {
+            document.querySelector(".mobile-navbar").classList.toggle('active');
+        }
+        window.onscroll = function () { myFunction() };
+
+        function myFunction() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                /*當卷軸滾動超過50px時，執行以下程式*/
+                document.querySelector(".logo").classList.add('small-logo');
+            } else {
+                document.querySelector(".logo").classList.remove('small-logo');
+            }
+        }
+    </script>
+</body>
+
+</html>

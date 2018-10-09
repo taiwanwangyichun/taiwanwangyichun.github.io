@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            padding: 20px;
+            border: 5px solid;
+            transition: 0.3s;
+        }
+
+        .bg_blue {
+            background-color: blue;
+            width: 200px;
+            height: 200px;
+            border: none;
+        }
+
+        .color-red {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="boxA" class="box">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint obcaecati ea ad odit temporibus distinctio libero
+        amet ullam cum, eligendi esse necessitatibus magni unde dolorem id. Dignissimos voluptatem rerum cum?
+    </div>
+
+    <script>
+        var boxA = document.querySelector("#boxA");
+
+        boxA.onclick = function () {
+            //檢查裡面是否有bg_blue這個class
+            //
+            // if(boxA.classList.contains("bg_blue")){
+            //     boxA.classList.remove("bg_blue");
+            // }else{
+            //     boxA.classList.add("bg_blue");
+            // }
+
+            boxA.classList.toggle("bg_blue");
+        }
+    </script>
+</body>
+
+</html>

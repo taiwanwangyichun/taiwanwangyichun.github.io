@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>card-2</title>
+<style>
+    *{box-sizing: border-box;}
+    .card-main{
+        width: 902px;
+        border: 1px solid #00FfFF;
+    }
+    .card-left{
+        width: 300px;
+        height: 300px;
+        background-color: aqua;
+        float: left;
+        background-image: url("/imgs/04-1.jpg");
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+    .card-right{
+        width: 600px;
+        height: 300px;
+        background-color:blue;
+        float: left;
+        position: relative;
+        padding: 10px 10px 10px 10px;
+    }
+    .classfix{
+        clear: both;
+    }
+    .text{
+        text-align: justify;
+    }
+    .card-more{
+        position: absolute;
+        font-size: 30px;
+        right:30px;
+        bottom: 0;
+
+    }
+</style>
+
+</head>
+
+<body>
+    <div class="card-main">
+        <div class="card-left">
+
+        </div>
+        <div class="card-right">
+            <h1>sakura</h1>
+            <p class ="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam quos consequuntur ratione accusantium ullam excepturi vitae dolore iusto qui consequatur, eveniet ab unde neque architecto nesciunt perspiciatis repellat quidem quibusdam.</p>
+            <a class="card-more" href="https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web/HTML_basics">more</a>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>分頁切換</title>
+
+    <style>
+        .btn-group {
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            display: none;
+            width: 300px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+            padding: 10px 20px 20px 20px;
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="btn-group">
+        <button id="btn1" class="btn">Tab1</button>
+        <button id="btn2" class="btn">Tab2</button>
+        <button id="btn3" class="btn">Tab3</button>
+    </div>
+
+
+    <div id="tab1_content" class="tab show">
+        <h1>Tab1</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi illo libero harum? Architecto nulla delectus
+            natus facilis dolor dolorum ullam impedit, saepe, quaerat accusamus omnis odio exercitationem voluptas
+            illum doloribus?</p>
+    </div>
+
+    <div id="tab2_content" class="tab ">
+        <h1>Tab2</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci quidem exercitationem, rem corrupti
+            aliquid asperiores tempore maxime veniam praesentium consequuntur voluptates quia velit. Aut sed, ratione
+            animi amet eius maiores.</p>
+    </div>
+
+    <div id="tab3_content" class="tab">
+        <h1>Tab3</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias in adipisci animi fuga perferendis qui
+            architecto, aliquam accusamus incidunt magni illum cum, labore ea atque, vitae quis corporis neque eveniet?</p>
+    </div>
+
+    <script>
+        var btn1 = document.querySelector("#btn1");
+        var btn2 = document.querySelector("#btn2");
+        var btn3 = document.querySelector("#btn3");
+        var tab1_content = document.querySelector("#tab1_content");
+        var tab2_content = document.querySelector("#tab2_content");
+        var tab3_content = document.querySelector("#tab3_content");
+
+        btn1.onclick = function () {
+            tab1_content.classList.add("show");
+            tab2_content.classList.remove("show");
+            tab3_content.classList.remove("show");
+        }
+
+        btn2.onclick = function () {
+            tab1_content.classList.remove("show");
+            tab2_content.classList.add("show");
+            tab3_content.classList.remove("show");
+        }
+
+        btn3.onclick = function () {
+            tab1_content.classList.remove("show");
+            tab2_content.classList.remove("show");
+            tab3_content.classList.add("show");
+        }
+    </script>
+</body>
+
+</html>

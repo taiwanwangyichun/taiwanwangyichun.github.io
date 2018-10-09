@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>20180928-Exercise-1</title>
+    <style>
+        body{
+            height: 2000px;
+            margin: 0;
+        }
+        #BackToTOP{
+            position: fixed;
+            right: 0;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <button id="BackToTOP">BackToTOP</button>
+    <script>
+        window.onscroll=function(){
+        var body=document.querySelector("body");
+        var scrollTop=document.documentElement.scrollTop;
+        if(scrollTop>500){
+            body.style.backgroundColor="red";
+        }
+        else{
+            body.style.backgroundColor="white";
+        }    
+        }
+        var BackToTOP=document.querySelector("#BackToTOP");
+        BackToTOP.onclick=function(){
+            document.documentElement.scrollTop=0;
+        }
+    </script>
+</body>
+</html>
